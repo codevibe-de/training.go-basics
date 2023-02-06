@@ -36,5 +36,6 @@ func iotaConsts() {
 		GB
 		TB
 	)
+	fmt.Println(KB, MB, GB)
 	fmt.Printf("1 TB has %d bytes\n", TB)
 }
