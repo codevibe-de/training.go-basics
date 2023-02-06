@@ -30,7 +30,8 @@ func constants() {
 
 func iotaConsts() {
 	const (
-		KB = (1 << (10 * iota))
+		_ = (1 << (10 * iota))
+		KB
 		MB
 		GB
 		TB
