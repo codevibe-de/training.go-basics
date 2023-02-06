@@ -177,6 +177,14 @@ func createFilterFunc(length int) filterFunc {
 	}
 }
 
+func deferDemo() {
+	defer fmt.Println("later")
+	fmt.Println("Sooner or")
+	defer func() {
+		fmt.Println("you're gonna be fine")
+	}()
+}
+
 func main() {
-	closure()
+	deferDemo()
 }
