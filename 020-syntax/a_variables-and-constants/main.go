@@ -3,5 +3,5 @@ package main
 import "fmt"
 
 func main() {
-	fmt.Println("Variables & constants:\n")
+	fmt.Println("Variables & constants:")
 }

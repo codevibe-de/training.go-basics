@@ -3,7 +3,7 @@ package main
 import "fmt"
 
 func main() {
-	fmt.Println("Pointers:\n")
+	fmt.Println("Pointers:")
 
 	var (
 		n1 = 88
