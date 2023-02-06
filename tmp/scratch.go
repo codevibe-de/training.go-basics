@@ -2,6 +2,8 @@ package main
 
 import (
 	"fmt"
+	"math"
+	"strings"
 	"time"
 )
 
@@ -178,13 +180,93 @@ func createFilterFunc(length int) filterFunc {
 }
 
 func deferDemo() {
-	defer fmt.Println("later")
+	defer fmt.Println("you're gonna be fine")
 	fmt.Println("Sooner or")
 	defer func() {
-		fmt.Println("you're gonna be fine")
+		fmt.Println("later")
 	}()
 }
 
+func stringsDemo() {
+	s := "Hey you"
+	strings.Split(s, " ")
+}
+
+func arrayDemo() {
+	var arr [3]int
+	fmt.Println(arr)
+	arr[1] = 8888
+	fmt.Println(arr)
+
+	strArr := [3]string{"Hey you", "Out there in the cold"}
+	fmt.Printf("%q (%T)\n", strArr, strArr)
+}
+
+func forDemo() {
+	var squares [5]int
+	for i := 0; i < 5; i++ {
+		squares[i] = i * i
+	}
+	fmt.Println(squares)
+}
+
+func forDemo2() {
+	x := 100.0
+	for x > 2 {
+		x = math.Sqrt(x)
+		fmt.Printf("%.3f ", x)
+	}
+}
+
+func forDemoRange() {
+	factors := [4]string{"cero", "uno", "dos", "tres"}
+	for i, v := range factors {
+		fmt.Printf("#%d %s, ", i, v)
+	}
+}
+
+type rectangle struct {
+	width  int
+	height int
+}
+
+func (r *rectangle) area() int {
+	return r.width * r.height
+}
+
+func (r *rectangle) setWidth(w int) {
+	(*r).width = w
+}
+
 func main() {
-	deferDemo()
+	makeSlice()
+	//r := rectangle{3, 4}
+	//fmt.Println(r.area())
+	//r.setWidth(10)
+	//fmt.Println(r.area())
+}
+
+func sliceDemo() {
+	intSlice := []int{1, 2, 3}
+	fmt.Println(intSlice)
+	intSlice = append(intSlice, 4)
+	fmt.Println(intSlice)
+}
+
+func sliceLenAndCap() {
+	intSlice := []int{1, 2, 3}
+	intSlice = append(intSlice, 4)
+	fmt.Printf("length: %d, capacity: %d", len(intSlice), cap(intSlice))
+}
+
+func slicing() {
+	boolArray := [4]bool{true, true, false, false}
+	boolSlice := boolArray[1:3]
+	fmt.Println(boolSlice)
+}
+
+func makeSlice() {
+	var strSlice []string = make([]string, 2, 10)
+	fmt.Printf("%q\n", strSlice)
+	fmt.Printf("length: %d, capacity: %d", len(strSlice), cap(strSlice))
 }

@@ -43,6 +43,8 @@ Schreiben Sie eine Funktion, die Zentimeter in Meter umrechnet.
 
 Geben Sie das Ergebnis aus, sodass der gewünschte Output erfolgt.
 
+## 
+
 ## d) Structs
 
 Sie möchten folgendes JSON mit Structs verarbeiten:
@@ -107,3 +109,17 @@ Implementieren Sie diese Funktion in mehreren Varianten:
 Rufen Sie nun ihre Funktion (auch gerne verschachtelt) auf und lassen
 das Ergebnis ausgeben.
 
+## ?) Arrays
+
+Implementieren Sie eine Methode, die auf einem `int` Array 
+
+## ?) Slices
+
+Implementieren Sie einen **Stack** von `string` Werten mithilfe eines Slice.
+
+Dieser soll folgende Funktionen implementieren:
+````go
+func Push(stack []string, v string) {}
+func Peek(stack []string) (string) {}
+func Pop(stack []string) (string) {}
+````
