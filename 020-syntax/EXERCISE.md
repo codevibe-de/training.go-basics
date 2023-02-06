@@ -70,9 +70,9 @@ Legen Sie dann eine Struct Instanz mit den obigen Daten an.
 Schreiben Sie eine Funktion mit folgendem Input/Output Verhalten:
 
 ````go
-	numbers, count := fibonacci(50)
-    fmt.Println(numbers) // "1 1 2 3 5 8 13 21 34"
-    fmt.Println(count)  // 9
+numbers, count := fibonacci(50)
+fmt.Println(numbers) // "1 1 2 3 5 8 13 21 34"
+fmt.Println(count)  // 9
 ````
 
 ### Summierung mit Offset
@@ -91,3 +91,19 @@ eine Funktion, die für eine beliebige Anzahl an `int` Werten die folgenden Stat
 - größter
 - Summe
 - Durchschnitt
+
+## f) First Class Citizen Functions
+
+Deklarieren Sie einen Funktionstyp mit folgender Signatur:
+````go
+funct(int, int) int
+````
+
+Implementieren Sie diese Funktion in mehreren Varianten:
+* Addition
+* Subtraktion
+* Multiplikation
+
+Rufen Sie nun ihre Funktion (auch gerne verschachtelt) auf und lassen
+das Ergebnis ausgeben.
+
