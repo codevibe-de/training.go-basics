@@ -15,5 +15,5 @@ func main() {
 }
 
 func centimeterToMeter(cm centimeter) meter {
-	return meter(float32(cm) / 100.0)
+	return meter(cm) / 100.0
 }
