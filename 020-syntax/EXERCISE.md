@@ -75,6 +75,8 @@ berechnet werden.
 
 Schreiben Sie die dafür notwendige Funktion.
 
+Hilfreich sind die StdLib Packages "strings" und "unicode".
+
 ## i) Structs
 
 Sie möchten folgendes JSON mit Structs verarbeiten:
@@ -94,6 +96,8 @@ Erstellen Sie die dafür nötigen Structs. Diese sollen nur englische Attribute 
 (also "productId" statt "produktId") und in Camel-Case notiert werden ("unitPrice" statt "betrag-je-stueck").
 
 Legen Sie dann eine Struct Instanz mit den obigen Daten an.
+
+Exportieren Sie den Struct in JSON mit `json.Marshal(p1)` -- aber Achtung, es gibt noch ein Problem... 
 
 ## j) variadische Funktionen
 
