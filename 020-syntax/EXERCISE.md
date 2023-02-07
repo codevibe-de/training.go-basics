@@ -43,9 +43,37 @@ Schreiben Sie eine Funktion, die Zentimeter in Meter umrechnet.
 
 Geben Sie das Ergebnis aus, sodass der gewünschte Output erfolgt.
 
-## 
+## e) For Schleifen
 
-## d) Structs
+Deklarieren Sie ein Array von Zahlen, z.B. `int` oder `float32`.
+
+Schreiben Sie eine Funktion, welche das Array als Parameter annimmt und
+die Summe aller Zahlen zurückgibt.
+
+## f) If Abfragen
+
+Schreiben Sie eine Funktion, welche für das Array von Zahlen (siehe oben)
+nun sowohl den kleinsten wie auch den größten Wert zurückgibt.
+
+## g) Switch
+
+### Wochenende?
+
+Wir wollen wissen, ob heute Wochenende ist (okay, recht unwahrscheinlich während des Trainings). 
+
+Dazu bitte im StdLib Package "time" (https://pkg.go.dev/time) die Funktion `Now()` und `Weekday()` anschauen. Ebenso gibt es dort Konstanten für
+die einzelnen Wochentage.
+
+Schreiben Sie eine switch Anweisung, die für den heutigen Tag ausgibt, ob es Wochenende ist oder nicht.
+
+## h) Strings und Runes
+
+Für einen beliebigen String wie z.B. "Heute lerne ich Go" soll die Camel-Case 
+Variante in der Form "HeuteLerneIchGo" berechnet werden.
+
+Schreiben Sie die dafür notwendige Funktion.
+
+## i) Structs
 
 Sie möchten folgendes JSON mit Structs verarbeiten:
 
@@ -56,7 +84,7 @@ Sie möchten folgendes JSON mit Structs verarbeiten:
   "Preis": {
     "betrag-je-stueck": 12.99,
     "währung": "EUR"
-  } 
+  }
 }
 ````
 
@@ -65,43 +93,29 @@ Erstellen Sie die dafür nötigen Structs. Diese sollen nur englische Attribute 
 
 Legen Sie dann eine Struct Instanz mit den obigen Daten an.
 
-## e) Funktionen
-
-### Fibonacci
-
-Schreiben Sie eine Funktion mit folgendem Input/Output Verhalten:
-
-````go
-numbers, count := fibonacci(50)
-fmt.Println(numbers) // "1 1 2 3 5 8 13 21 34"
-fmt.Println(count)  // 9
-````
-
-### Summierung mit Offset
-
-Schreiben Sie eine Summierungsfunktion, die aus einer beliebigen Anzahl an `int` Werten eine
-Gesamtsumme berechnet.
-
-Über einen zusätzlichen Offset-Wert soll diese Summe verändert werden können.
+## j) variadische Funktionen
 
 ### Statistiken
 
 Ähnlich der Anzeige von Statistiken in Excel, wenn mehrere Zellen selektiert sind, benötigen wir
 eine Funktion, die für eine beliebige Anzahl an `int` Werten die folgenden Statistiken berechnet:
+
 - Anzahl Werte
 - kleinster
 - größter
 - Summe
 - Durchschnitt
 
-## f) First Class Citizen Functions
+## l) First Class Citizen Functions
 
 Deklarieren Sie einen Funktionstyp mit folgender Signatur:
+
 ````go
 funct(int, int) int
 ````
 
 Implementieren Sie diese Funktion in mehreren Varianten:
+
 * Addition
 * Subtraktion
 * Multiplikation
@@ -109,15 +123,12 @@ Implementieren Sie diese Funktion in mehreren Varianten:
 Rufen Sie nun ihre Funktion (auch gerne verschachtelt) auf und lassen
 das Ergebnis ausgeben.
 
-## ?) Arrays
-
-Implementieren Sie eine Methode, die auf einem `int` Array 
-
 ## ?) Slices
 
 Implementieren Sie einen **Stack** von `string` Werten mithilfe eines Slice.
 
 Dieser soll folgende Funktionen implementieren:
+
 ````go
 func Push(stack []string, v string) {}
 func Peek(stack []string) (string) {}
