@@ -18,5 +18,8 @@ func miniSort(a, b *int) {
 		c := *a
 		*a = *b
 		*b = c
+
+		// oder ganz prägnant:
+		// *a, *b = *b, *a
 	}
 }
