@@ -3,5 +3,5 @@ package main
 import "fmt"
 
 func main() {
-	fmt.Println("Functions:\n")
+	fmt.Println("For-Loops:")
 }
