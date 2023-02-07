@@ -35,7 +35,11 @@ erfolgt.
 
 ## c) Types
 
-### Umwandlung cm in m
+Wir wollen Zentimeter in Meter umwandeln können -- und dafür eigene Typen haben, wie z.B.
+
+````go
+type centimeter int
+````
 
 Deklarieren Sie eigene Typen für `centimeter` und `meter`. Wo muss die Deklaration erfolgen?
 
@@ -57,19 +61,17 @@ nun sowohl den kleinsten wie auch den größten Wert zurückgibt.
 
 ## g) Switch
 
-### Wochenende?
+Wir wollen wissen, ob heute Wochenende ist (okay, recht unwahrscheinlich während des Trainings).
 
-Wir wollen wissen, ob heute Wochenende ist (okay, recht unwahrscheinlich während des Trainings). 
-
-Dazu bitte im StdLib Package "time" (https://pkg.go.dev/time) die Funktion `Now()` und `Weekday()` anschauen. Ebenso gibt es dort Konstanten für
-die einzelnen Wochentage.
+Dazu bitte im StdLib Package "time" (https://pkg.go.dev/time) die Funktion `Now()` und `Weekday()` anschauen. Ebenso
+gibt es dort Konstanten für die einzelnen Wochentage.
 
 Schreiben Sie eine switch Anweisung, die für den heutigen Tag ausgibt, ob es Wochenende ist oder nicht.
 
 ## h) Strings und Runes
 
-Für einen beliebigen String wie z.B. "Heute lerne ich Go" soll die Camel-Case 
-Variante in der Form "HeuteLerneIchGo" berechnet werden.
+Für einen beliebigen String wie z.B. "Heute lerne ich Go" soll die Camel-Case-Variante in der Form "HeuteLerneIchGo"
+berechnet werden.
 
 Schreiben Sie die dafür notwendige Funktion.
 
@@ -94,8 +96,6 @@ Erstellen Sie die dafür nötigen Structs. Diese sollen nur englische Attribute 
 Legen Sie dann eine Struct Instanz mit den obigen Daten an.
 
 ## j) variadische Funktionen
-
-### Statistiken
 
 Ähnlich der Anzeige von Statistiken in Excel, wenn mehrere Zellen selektiert sind, benötigen wir
 eine Funktion, die für eine beliebige Anzahl an `int` Werten die folgenden Statistiken berechnet:

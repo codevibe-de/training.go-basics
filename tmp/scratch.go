@@ -204,7 +204,7 @@ func arrayDemo() {
 
 func forDemo() {
 	var squares [5]int
-	for i := 0; i < 5; i++ {
+	for i := 0; i < len(squares); i++ {
 		squares[i] = i * i
 	}
 	fmt.Println(squares)
@@ -219,8 +219,8 @@ func forDemo2() {
 }
 
 func forDemoRange() {
-	factors := [4]string{"cero", "uno", "dos", "tres"}
-	for i, v := range factors {
+	números := [4]string{"cero", "uno", "dos", "tres"}
+	for i, v := range números {
 		fmt.Printf("#%d %s, ", i, v)
 	}
 }
@@ -274,7 +274,7 @@ func switchDemo() {
 }
 
 func main() {
-	switchDemo()
+	stringRange()
 	//r := rectangle{3, 4}
 	//fmt.Println(r.area())
 	//r.setWidth(10)
@@ -299,4 +299,30 @@ func handleError(err error) {
 
 func connect() (string, error) {
 	return "", nil
+}
+
+func typeSwitch() {
+	var x interface{} = 123
+	switch i := x.(type) {
+	case int:
+		var someOtherInt int = i
+		fmt.Println(someOtherInt)
+	case bool, string:
+		fmt.Println("type is bool or string")
+	default:
+		// ...
+	}
+}
+
+func stringRange() {
+	s := "números"
+	fmt.Println("idx | unicode | char")
+	fmt.Println("----+---------+-----")
+	for i, c := range s {
+		fmt.Printf(" #%d |     %d | %q\n", i, c, c)
+	}
+}
+
+func isCaptialA(r rune) bool {
+	return r == 65
 }
