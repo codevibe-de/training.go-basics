@@ -97,11 +97,11 @@ Erstellen Sie die dafür nötigen Structs. Diese sollen nur englische Attribute 
 
 Legen Sie dann eine Struct Instanz mit den obigen Daten an.
 
-Exportieren Sie den Struct in JSON mit `json.Marshal(p1)` -- aber Achtung, es gibt noch ein Problem... 
+Exportieren Sie den Struct in JSON mit `json.Marshal(p1)` -- aber Achtung, es gibt noch ein Problem...
 
 ## j) Variadische Funktionen
 
-Schreiben Sie eine Funktion, die alle übergebenen `int` Werte verdoppelt. Es soll kein Array übergeben werden, 
+Schreiben Sie eine Funktion, die alle übergebenen `int` Werte verdoppelt. Es soll kein Array übergeben werden,
 sondern einzelne Werte!
 
 Welche Signatur muss diese Funktion haben?
@@ -153,6 +153,37 @@ Funktion, die den Gruppierungsschlüssel (key) aus einem Buch extrahiert.
 
 ## q) OO-Design
 
+* `push()` -- hier wird ein Wert auf den Stack gelegt
+* `pop()` -- es wird ein Wert von oben vom Stack genommen
+* `peek()` -- das oberste Element wird ausgegeben
+
+## p) Maps
+
+Angenommen es gibt ein Struct mit den Attributen
+
+* isbn (string)
+* author (string)
+* publisher (string)
+
+Schreiben Sie Funktionen, welche die Bücher in einer Map gruppieren lässt:
+
+* nach ISBN
+* nach Autor
+* nach Verlag
+
+Bitte beachten, dass die ISBN je Buch eindeutig ist, aber Autor und Verlag nicht!
+
+Und Achtung, da hat sich ein Tippfehler im vorgegebenen Code eingeschlichen...
+
+**Bonus:** Gruppieren Sie die Bücher nach Autor und Verlag. Nutzen Sie hierfür eine jeweils per Closure erstellte
+Funktion, die den Gruppierungsschlüssel (key) aus einem Buch extrahiert.
+
+## q) OO-Design
+
 Erstellen Sie ein Struct `Bookshelf`, welches folgende Methoden anbietet:
+
 * `add(b book)`
-* `byAuthor(author string) []books`
+* `forIsbn(isbn string) books`
+* `all() []books`
+
+Fügen Sie dort die vordefinierten Bücher ein und fragen diese via des Bookshelfs ab.
