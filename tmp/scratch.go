@@ -274,7 +274,7 @@ func switchDemo() {
 }
 
 func main() {
-	stringRange()
+	runes()
 	//r := rectangle{3, 4}
 	//fmt.Println(r.area())
 	//r.setWidth(10)
@@ -325,4 +325,17 @@ func stringRange() {
 
 func isCaptialA(r rune) bool {
 	return r == 65
+}
+
+func runes() {
+	s := "Thomas 托马斯"
+	runes := []rune(s)
+	fmt.Println(runes)
+
+	s2 := string([]rune{'托', 'H', 'i'})
+	fmt.Println(s2)
+
+	for i, v := range s2 {
+		fmt.Printf("#%d %v\n", i, v)
+	}
 }

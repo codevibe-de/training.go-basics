@@ -99,16 +99,12 @@ Legen Sie dann eine Struct Instanz mit den obigen Daten an.
 
 Exportieren Sie den Struct in JSON mit `json.Marshal(p1)` -- aber Achtung, es gibt noch ein Problem... 
 
-## j) variadische Funktionen
+## j) Variadische Funktionen
 
-Ähnlich der Anzeige von Statistiken in Excel, wenn mehrere Zellen selektiert sind, benötigen wir
-eine Funktion, die für eine beliebige Anzahl an `int` Werten die folgenden Statistiken berechnet:
+Schreiben Sie eine Funktion, die alle übergebenen `int` Werte verdoppelt. Es soll kein Array übergeben werden, 
+sondern einzelne Werte!
 
-- Anzahl Werte
-- kleinster
-- größter
-- Summe
-- Durchschnitt
+Welche Signatur muss diese Funktion haben?
 
 ## l) First Class Citizen Functions
 
@@ -127,7 +123,7 @@ Implementieren Sie diese Funktion in mehreren Varianten:
 Rufen Sie nun ihre Funktion (auch gerne verschachtelt) auf und lassen
 das Ergebnis ausgeben.
 
-## ?) Slices
+## m) Slices
 
 Implementieren Sie einen **Stack** von `string` Werten mithilfe eines Slice.
 
