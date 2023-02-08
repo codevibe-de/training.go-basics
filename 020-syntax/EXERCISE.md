@@ -137,13 +137,19 @@ Dieser soll folgende Funktionen implementieren:
 Angenommen es gibt ein Struct mit den Attributen
 * isbn (string)
 * author (string)
-* year (uint16)
+* publisher (string)
 
 Schreiben Sie Funktionen, welche die Bücher in einer Map gruppieren lässt:
 * nach ISBN
 * nach Autor
+* nach Verlag
 
-Bitte beachten, dass die ISBN eindeutig ist, der Autor nicht!
+Bitte beachten, dass die ISBN je Buch eindeutig ist, aber Autor und Verlag nicht!
+
+Und Achtung, da hat sich ein Tippfehler im vorgegebenen Code eingeschlichen...
+
+**Bonus:** Gruppieren Sie die Bücher nach Autor und Verlag. Nutzen Sie hierfür eine jeweils per Closure erstellte
+Funktion, die den Gruppierungsschlüssel (key) aus einem Buch extrahiert. 
 
 ## q) OO-Design
 

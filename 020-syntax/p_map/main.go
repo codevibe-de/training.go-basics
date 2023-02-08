@@ -15,6 +15,7 @@ func main() {
 		{"345-476", "T. Müller", "Random House"},
 		{"133-898", "I. Wellmann", "Random House"},
 		{"423-001", "I. Wellmann", "Random House"},
+<<<<<<< HEAD
 		{"193-753", "T. Müller", "Wort und Bild Verlag"},
 	}
 	fmt.Println(books)
@@ -83,4 +84,12 @@ func groupBooksUsingKeyExtractor(books []book, keyExtractor keyExtractorFunc) ma
 		res[key] = append(res[key], b)
 	}
 	return res
+=======
+		{"193-753", "T, Müller", "Wort und Bild Verlag"},
+	}
+	fmt.Println(books)
+	//groupBooksByIsbn()
+	//groupBooksByAuthor()
+	//groupBooksByPublisher()
+>>>>>>> 932b613 (prep 020)
 }
