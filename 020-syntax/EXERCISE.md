@@ -123,14 +123,30 @@ Implementieren Sie diese Funktion in mehreren Varianten:
 Rufen Sie nun ihre Funktion (auch gerne verschachtelt) auf und lassen
 das Ergebnis ausgeben.
 
-## m) Slices
+## o) Slices
 
 Implementieren Sie einen **Stack** von `string` Werten mithilfe eines Slice.
 
 Dieser soll folgende Funktionen implementieren:
+* `push()` -- hier wird ein Wert auf den Stack gelegt
+* `pop()` -- es wird ein Wert von oben vom Stack genommen
+* `peek()` -- das oberste Element wird ausgegeben
 
-````go
-func Push(stack []string, v string) {}
-func Peek(stack []string) (string) {}
-func Pop(stack []string) (string) {}
-````
+## p) Maps
+
+Angenommen es gibt ein Struct mit den Attributen
+* isbn (string)
+* author (string)
+* year (uint16)
+
+Schreiben Sie Funktionen, welche die Bücher in einer Map gruppieren lässt:
+* nach ISBN
+* nach Autor
+
+Bitte beachten, dass die ISBN eindeutig ist, der Autor nicht!
+
+## q) OO-Design
+
+Erstellen Sie ein Struct `Bookshelf`, welches folgende Methoden anbietet:
+* `add(b book)`
+* `byAuthor(author string) []books`
