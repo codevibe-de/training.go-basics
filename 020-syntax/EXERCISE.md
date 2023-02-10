@@ -70,12 +70,18 @@ Schreiben Sie eine switch Anweisung, die für den heutigen Tag ausgibt, ob es Wo
 
 ## h) Strings und Runes
 
+### CamelCase
+
 Für einen beliebigen String wie z.B. "Heute lerne ich Go" soll die Camel-Case-Variante in der Form "HeuteLerneIchGo"
 berechnet werden.
 
 Schreiben Sie die dafür notwendige Funktion.
 
 Hilfreich sind die StdLib Packages "strings" und "unicode".
+
+### kebap-case / snake-case
+
+Ergänzend können Sie eine Transformation in Kebap Case vornehmen: "heute-lerne-ich-go"
 
 ## i) Structs
 
@@ -128,9 +134,10 @@ das Ergebnis ausgeben.
 Implementieren Sie einen **Stack** von `string` Werten mithilfe eines Slice.
 
 Dieser soll folgende Funktionen implementieren:
-* `push()` -- hier wird ein Wert auf den Stack gelegt
-* `pop()` -- es wird ein Wert von oben vom Stack genommen
-* `peek()` -- das oberste Element wird ausgegeben
+
+* `push` -- hier wird ein Wert auf den Stack gelegt
+* `pop` -- es wird ein Wert von oben vom Stack genommen
+* `peek` -- das oberste Element wird ausgegeben
 
 ## p) Maps
 
@@ -163,5 +170,6 @@ Erstellen Sie ein Struct `Bookshelf`, welches folgende Methoden anbietet:
 
 Fügen Sie dort die vordefinierten Bücher ein und fragen diese via des Bookshelfs ab.
 
-**Bonus:** Refactoren Sie Ihre `Stack` Implementierung in eine objektorientierte Variante.
-Aber Achtung, es gibt keinen Konstruktor in Go.
+**Bonus:** Refaktorieren Sie Ihre `Stack` Implementierung in eine objektorientierte Variante.
+Aber Achtung, es gibt keinen Konstruktor in Go. Falls Sie einen benötigen, so muss eine `newStack()` Funktion 
+herhalten.
