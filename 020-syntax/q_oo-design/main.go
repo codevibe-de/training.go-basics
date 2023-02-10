@@ -2,13 +2,14 @@ package main
 
 import "fmt"
 
-type book struct {
-	isbn      string
-	author    string
-	publisher string
+func main() {
+	fmt.Println("----------------- STACK ----------------------------")
+	stackDemo()
+	fmt.Println("----------------- BOOKSHELF ------------------------")
+	bookshelfDemo()
 }
 
-func main() {
+func bookshelfDemo() {
 	fmt.Println("OO-Design:")
 	books := [5]book{
 		{"123-456", "A. Hendker", "Wort und Bild Verlag"},
@@ -28,6 +29,12 @@ func main() {
 
 	fmt.Println("\nGet all books:")
 	fmt.Println(shelf.all())
+}
+
+type book struct {
+	isbn      string
+	author    string
+	publisher string
 }
 
 type bookshelf struct {
