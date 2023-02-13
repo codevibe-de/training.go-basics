@@ -24,7 +24,6 @@ func stackDemo() {
 }
 
 func bookshelfDemo() {
-	fmt.Println("Methods:")
 	books := [5]book{
 		{"123-456", "A. Hendker", "Wort und Bild Verlag"},
 		{"345-476", "T. Müller", "Random House"},
@@ -40,6 +39,7 @@ func bookshelfDemo() {
 
 	fmt.Println("Get one book:")
 	fmt.Println(shelf.forIsbn("123-456"))
+	fmt.Println(shelf.forIsbn("does-not-exist"))
 
 	fmt.Println("\nGet all books:")
 	fmt.Println(shelf.all())
