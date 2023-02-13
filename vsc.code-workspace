@@ -8,6 +8,12 @@
 		},
 		{
 			"path": "025_methods-interfaces"
+		},
+		{
+			"path": "030_error"
+		},
+		{
+			"path": "040_testing"
 		}
 	],
 	"settings": {}
