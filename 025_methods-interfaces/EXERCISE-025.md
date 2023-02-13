@@ -18,7 +18,12 @@ Fügen Sie dort die in `main.go` vordefinierten Bücher ein und fragen diese dan
 
 Refaktorieren Sie Ihre `Stack` Implementierung aus dem Abschnitt "020/Slices" in eine objektorientierte Variante.
 
-Aber Achtung, es gibt keinen Konstruktor in Go. Falls Sie einen benötigen, so muss eine `newStack()` Funktion
+Machen Sie die Implementierung in einer Datei `stack\stack.go` (d.h. in Unterverzeichnis) mit Package "stack".
+
+Dies erfordert allerdings auch, dass Sie den Struct-Bezeichner und alle Methodennamen mit einem **Großbuchstaben**
+beginnen lassen, damit diese Deklarationen exportiert werden.
+
+Achtung, es gibt keinen Konstruktor in Go. Falls Sie einen benötigen, so muss eine `NewStack()` Funktion
 herhalten.
 
 ## c) Interfaces & Embedding
