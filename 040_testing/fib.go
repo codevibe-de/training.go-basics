@@ -9,8 +9,12 @@ func Reset() {
 	prev, prevPrev = 0, 0
 }
 
+// NextFib returns the next Fibonacci number
 func NextFib() int {
 	res := prev + prevPrev
-	prev, prevPrev = res, prevPrev
+	if res == 0 {
+		res = 1
+	}
+	prev, prevPrev = res, prev
 	return res
 }
