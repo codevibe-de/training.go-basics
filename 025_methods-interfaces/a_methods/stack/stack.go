@@ -1,20 +1,7 @@
-package main
-
-import "fmt"
+package stack
 
 type Stack struct {
 	items []string
-}
-
-func stackDemo() {
-	s := NewStack()
-	s.Push("first")
-	s.Push("second")
-	fmt.Println(s.Peek()) // "second"
-	s.Push("third")
-	fmt.Println(s.Pop())  // "third"
-	fmt.Println(s.Pop())  // "second"
-	fmt.Println(s.Peek()) // "first"
 }
 
 func NewStack() *Stack {
@@ -27,14 +14,16 @@ func (s *Stack) Push(item string) {
 	s.items = append(s.items, item)
 }
 
-func (s *Stack) Pop() string {
+// Pop removes and returns the top-most item on the stack.
+// The boolean return value shows if a value was present, similiar to how a map works.
+func (s *Stack) Pop() (string, bool) {
 	l := len(s.items)
 	if l == 0 {
-		return ""
+		return "", false
 	} else {
 		item := s.Peek()
 		s.items = s.items[:l-1]
-		return item
+		return item, true
 	}
 }
 

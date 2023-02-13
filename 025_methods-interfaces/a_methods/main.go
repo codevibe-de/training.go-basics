@@ -1,12 +1,26 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"local/025_methods-interfaces/a_methods/stack"
+)
 
 func main() {
 	fmt.Println("----------------- STACK ----------------------------")
 	stackDemo()
 	fmt.Println("----------------- BOOKSHELF ------------------------")
 	bookshelfDemo()
+}
+
+func stackDemo() {
+	s := stack.NewStack()
+	s.Push("first")
+	s.Push("second")
+	fmt.Println(s.Peek()) // "second"
+	s.Push("third")
+	fmt.Println(s.Pop())  // "third"
+	fmt.Println(s.Pop())  // "second"
+	fmt.Println(s.Peek()) // "first"
 }
 
 func bookshelfDemo() {
