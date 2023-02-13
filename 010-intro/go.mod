@@ -1,3 +1,3 @@
 module local/010-intro
 
-go 1.20
+go 1.19

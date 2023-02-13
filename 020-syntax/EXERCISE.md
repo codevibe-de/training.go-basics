@@ -147,7 +147,7 @@ Angenommen es gibt ein Struct mit den Attributen
 * author (string)
 * publisher (string)
 
-Schreiben Sie Funktionen, welche die Bücher in einer Map gruppieren lässt:
+Schreiben Sie Funktionen (`groupByAuthor()` und `groupByPublisher()`), welche die Bücher in einer Map gruppieren lässt:
 
 * nach ISBN
 * nach Autor
@@ -157,19 +157,8 @@ Bitte beachten, dass die ISBN je Buch eindeutig ist, aber Autor und Verlag nicht
 
 Und Achtung, da hat sich ein Tippfehler im vorgegebenen Code eingeschlichen...
 
-**Bonus:** Gruppieren Sie die Bücher nach Autor und Verlag. Nutzen Sie hierfür eine jeweils per Closure erstellte
-Funktion, die den Gruppierungsschlüssel (key) aus einem Buch extrahiert. 
-
-## q) OO-Design
-
-Erstellen Sie ein Struct `Bookshelf`, welches folgende Methoden anbietet:
-
-* `add(b book)`
-* `forIsbn(isbn string) books`
-* `all() []books`
-
-Fügen Sie dort die vordefinierten Bücher ein und fragen diese via des Bookshelfs ab.
-
-**Bonus:** Refaktorieren Sie Ihre `Stack` Implementierung in eine objektorientierte Variante.
-Aber Achtung, es gibt keinen Konstruktor in Go. Falls Sie einen benötigen, so muss eine `newStack()` Funktion 
-herhalten.
+**Bonus:** Gruppieren Sie die Bücher erneut nach Autor und Verlag. Nutzen Sie jetzt aber eine jeweils per Closure
+erstellte Funktion, die den Gruppierungsschlüssel (key) aus jedem Buch extrahiert und für die Gruppierung als Key nimmt.
+Wir wollen damit erreichen, dass die (sehr hohe) Code-Duplizierung der `groupBy...()` Funktionen entfällt. Die
+Key-Extractor Funktion übernimmt dann in der neuen `groupBy()` Funktion die Individualisierung, die bisher in den
+zwei Ausprägungen existiert hat.
