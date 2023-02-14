@@ -1,5 +1,8 @@
 # Übungen zum Thema "Testing"
 
+Tipp: Man kann Tests auf der Kommandozeile mit `go test` ausführen. Natürlich auch in der IDE - VSC hat
+hierfür eine eigene Ansicht (Reagenzglas).
+
 ## Fibonacci
 
 Schauen Sie sich die Fibonacci Implementierung in der Datei `fib.go` an.
