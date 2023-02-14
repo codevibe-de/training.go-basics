@@ -36,5 +36,6 @@ func main() {
 	for n := 0; n < 3; n++ {
 		signalCh <- true
 	}
+
 	time.Sleep(time.Second)
 }
