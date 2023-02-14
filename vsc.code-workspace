@@ -17,6 +17,9 @@
 		},
 		{
 			"path": "050_modules-packages"
+		},
+		{
+			"path": "070_concurrency"
 		}
 	],
 	"settings": {}
