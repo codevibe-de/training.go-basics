@@ -34,3 +34,11 @@ Literatur: https://www.digitalocean.com/community/tutorials/how-to-distribute-go
 
 Aktualisieren Sie nun Ihre kleine Go-Anwendung aus Übung a) indem Sie Ihr eigenes Modul dort hinzufügen und im Code
 verwenden.
+
+## d) Experimentelles Package nutzen
+
+Schauen Sie sich den Code in `main.go` an -- sowie das experimentelle Package https://pkg.go.dev/golang.org/x/exp/slices.
+
+Dort gibt es eine Funktion zum Vergleichen zweier Slices.
+
+Verbessern Sie die bestehende `compareSlices()` Funktion, indem diese das `slices` Package nutzt.
