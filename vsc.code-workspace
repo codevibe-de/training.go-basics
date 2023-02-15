@@ -1,24 +1,35 @@
 {
 	"folders": [
 		{
+			"name": "010-intro",
 			"path": "010-intro"
 		},
 		{
+			"name": "020-syntax",
 			"path": "020-syntax"
 		},
 		{
+			"name": "025_methods-interfaces",
 			"path": "025_methods-interfaces"
 		},
 		{
+			"name": "030_error",
 			"path": "030_error"
 		},
 		{
+			"name": "040_testing",
 			"path": "040_testing"
 		},
 		{
+			"name": "050_modules-packages",
 			"path": "050_modules-packages"
 		},
 		{
+			"name": "051_module-exrc",
+			"path": "051_module-exrc"
+		},
+		{
+			"name": "070_concurrency",
 			"path": "070_concurrency"
 		}
 	],
