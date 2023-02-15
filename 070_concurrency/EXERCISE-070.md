@@ -22,6 +22,21 @@ Wie wissen wir, wann jede Goroutine bereit ist? Mögliche Optionen, von einfach 
 In jedem Fall schreiben wir dann in den Startsignal-Channel Werte, um jede Goroutine nahezu gleichzeitig
 loslaufen zu lassen.
 
+## d) Pizza
+
+Wir backen Pizzen!
+
+Schauen Sie sich den Source-Code in `070_concurrency/d_pizza/main.go` an. Dort werden Pizzen und ihre Zutaten 
+definiert. Es gibt auch einen Ofen. Sowohl die Zutaten als auch der Ofen müssen präpariert werden, dies benötigt 
+jeweils Zeit.
+
+Ein rein sequentieller Ablauf ist vorgegeben.
+
+Aber in Ihrer Pizzeria haben wir drei tüchtige Helfer, nicht nur einen.
+
+Reduzieren Sie die Gesamtzeit so weit wie möglich, indem sie mit insgesamt 3 laufenden Prozessen arbeiten. Die 
+bestehenden Datentypen können erweitert werden, falls Sie noch Methoden oder Interfaces einbauen wollen. 
+
 ## e) Entweder Oder
 
 Starten Sie eine Goroutine, die alle 800 ms einen `int` Wert in einen Kanal schreibt.
