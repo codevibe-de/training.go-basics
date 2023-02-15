@@ -6,17 +6,22 @@ Tipps:
 
 ## a) Modul nutzen
 
-Erstellen Sie eine kleine Go-Anwendung, welche das Modul https://github.com/google/uuid nutzt. Dies können Sie in diesem
-Verzeichnis tun.
+Entwickeln Sie eine kleine Go-Anwendung, welche das Modul https://github.com/google/uuid nutzt. 
 
-Ihre Anwendung benötigt eine `go.mod` Datei, welche Sie mittels `go mod init` anlegen können.
+Nutzen Sie dafür das vorhandene Verzeichnis `051_module-exrc`.
 
-Das benötigte Modul deklarieren Sie in dieser Datei und führen dann `go get` aus.
+Ihre Anwendung benötigt eine `go.mod` Datei, welche Sie mittels `go mod init` dort erzeugen lassen. Da wir eine lokale
+Anwendung entwickeln, ist der Pfad nicht von Bedeutung.
 
-Und/oder Sie führen `go get <module-path>` aus, um das Modul importieren zu lassen. Was verändert sich in der `go.mod`
-Datei?
+Das benötigte UUID Modul deklarieren Sie in dieser Datei und führen dann `go get` aus.
+
+Und/oder Sie führen `go get <module-path>` (mit oder ohne Version) aus, um das Modul importieren zu lassen. 
+Was verändert sich in der `go.mod` Datei?
 
 Schauen Sie nun nach einem älteren Release des Moduls und nutzen dieses.
+
+Schlußendlich können Sie natürlich das Package "uuid" in der `main.go` Datei importieren und nutzen (z.B. 
+mittels `fmt.Println(uuid.New())`
 
 ## b) Eigenes Modul erstellen
 
