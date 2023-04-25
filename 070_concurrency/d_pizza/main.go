@@ -26,8 +26,8 @@ func (ing *Ingredient) prepare() {
 	ing.isPrepared = true
 }
 
-func (i *Ingredient) String() string {
-	return i.name
+func (ing *Ingredient) String() string {
+	return ing.name
 }
 
 type Pizza struct {
@@ -60,7 +60,7 @@ func (o *Oven) String() string {
 	return "Oven"
 }
 
-func (o *Oven) bake(pizza Pizza) error {
+func (o *Oven) bake(pizza *Pizza) error {
 	log.Printf("Trying to bake Pizza %s\n", pizza.name)
 	if !o.isPrepared {
 		return errors.New("oven is not prepared")
@@ -87,12 +87,12 @@ var (
 )
 
 var (
-	pizzaMargarita = Pizza{
+	pizzaMargarita = &Pizza{
 		"Margarita",
 		[]*Ingredient{dough1, tomatoSauce1, gratedCheese1},
 		5,
 	}
-	pizzaSalamiSpecial = Pizza{
+	pizzaSalamiSpecial = &Pizza{
 		"Salami Speciale",
 		[]*Ingredient{dough2, tomatoSauce2, gratedCheese2, salami2, onions2},
 		6,
@@ -107,7 +107,7 @@ func main() {
 
 	// launch workers
 	log.Println("Pizzeria starting up!")
-	pizzaOrderCh, pizzaDeliverCh := startPizzeria(&oven, 1)
+	pizzaOrderCh, pizzaDeliverCh := startPizzeria(&oven, 5)
 
 	// bake them
 	// ps of course we could use a for loop here if we had more pizzas
@@ -124,14 +124,14 @@ func main() {
 	log.Printf("All pizza done after %d seconds\n", int32(time.Since(startTime).Seconds()))
 }
 
-func startPizzeria(oven *Oven, workerCount int) (chan Pizza, chan Pizza) {
+func startPizzeria(oven *Oven, workerCount int) (chan *Pizza, chan *Pizza) {
 	// create channels
-	pizzaOrderCh := make(chan Pizza, 10)
-	pizzaDeliverCh := make(chan Pizza)
+	pizzaOrderCh := make(chan *Pizza, 10)
+	pizzaDeliverCh := make(chan *Pizza)
 	prepInCh := make(chan Preparer, 100)
 	prepOutCh := make(chan Preparer)
-	pizzaInCh := make(chan Pizza, 10)
-	pizzaOutCh := make(chan Pizza)
+	pizzaInCh := make(chan *Pizza, 10)
+	pizzaOutCh := make(chan *Pizza)
 
 	// launch some workers
 	for n := 0; n < workerCount; n++ {
@@ -151,9 +151,9 @@ func startPizzeria(oven *Oven, workerCount int) (chan Pizza, chan Pizza) {
 func worker(
 	id int,
 	prepInCh <-chan Preparer,
-	pizzaInCh <-chan Pizza,
+	pizzaInCh <-chan *Pizza,
 	prepOutCh chan<- Preparer,
-	pizzaOutCh chan<- Pizza,
+	pizzaOutCh chan<- *Pizza,
 	oven *Oven,
 ) {
 	for {
@@ -189,17 +189,19 @@ func worker(
 	}
 }
 
-func supervisor(pizzaOrderCh <-chan Pizza, pizzaDeliverChan chan<- Pizza,
+func supervisor(pizzaOrderCh <-chan *Pizza, pizzaDeliverChan chan<- *Pizza,
 	prepInCh chan<- Preparer, prepOutCh <-chan Preparer,
-	pizzaInCh chan<- Pizza, pizzaOutCh <-chan Pizza,
+	pizzaInCh chan<- *Pizza, pizzaOutCh <-chan *Pizza,
 	oven *Oven) {
-	unbakedPizzas := make([]Pizza, 0)
+	unbakedPizzas := make([]*Pizza, 0)
+	undeliveredPizzas := make([]*Pizza, 0)
 	for {
 		select {
 		case pizza, ok := <-pizzaOrderCh:
 			if ok {
 				log.Printf("SV: Pizza %s has been ordered, handing ingredients over to workers\n", pizza.name)
 				unbakedPizzas = append(unbakedPizzas, pizza)
+				undeliveredPizzas = append(undeliveredPizzas, pizza)
 				for _, ing := range pizza.ingredients {
 					prepInCh <- ing
 				}
@@ -208,11 +210,18 @@ func supervisor(pizzaOrderCh <-chan Pizza, pizzaDeliverChan chan<- Pizza,
 			if ok {
 				log.Printf("SV: Got notified that %s has been prepared\n", ing.String())
 				if oven.isPrepared {
-					for i, pizza := range unbakedPizzas {
+					for i := 0; i < len(unbakedPizzas); i++ {
+						pizza := unbakedPizzas[i]
 						if pizza.readyToBake() {
 							log.Printf("SV: Pizza %s is ready to bake, handing over to workers\n", pizza.name)
-							unbakedPizzas = slices.Delete(unbakedPizzas, i, i)
+							unbakedPizzas = slices.Delete(unbakedPizzas, i, i+1)
 							pizzaInCh <- pizza
+							if len(unbakedPizzas) == 0 {
+								log.Println("SV: All pizzas are baked, closing some channels")
+								close(prepInCh)
+								close(pizzaInCh)
+							}
+							i--
 						}
 					}
 				}
@@ -221,28 +230,16 @@ func supervisor(pizzaOrderCh <-chan Pizza, pizzaDeliverChan chan<- Pizza,
 			if ok {
 				log.Printf("SV: Got notified that Pizza %s has been baked, informing customer\n", pizza.name)
 				pizzaDeliverChan <- pizza
+				i := slices.IndexFunc(undeliveredPizzas, func(p *Pizza) bool { return p == pizza })
+				undeliveredPizzas = slices.Delete(undeliveredPizzas, i, i+1)
 			}
 		}
+		if len(undeliveredPizzas) == 0 {
+			log.Println("SV: All pizzas are delivered, closing some channels and going home")
+			close(pizzaDeliverChan)
+			return
+		}
 	}
-	//for obj := range prepOutCh {
-	//	switch obj.(type) {
-	//	case Preparer:
-	//		for i, pizza := range unbakedPizzas {
-	//			if pizza.readyToBake() && oven.isPrepared {
-	//				log.Printf("SV: Pizza %s ready to bake, handing over to workers\n", pizza.name)
-	//				fmt.Println(unbakedPizzas)
-	//				unbakedPizzas[i] = unbakedPizzas[len(unbakedPizzas)-1]
-	//				unbakedPizzas = unbakedPizzas[:len(unbakedPizzas)-1]
-	//				pizzaInCh <- pizza
-	//			}
-	//		}
-	//	}
-	//	if len(unbakedPizzas) == 0 {
-	//		close(prepInCh)
-	//		close(prepOutCh)
-	//		close(pizzaInCh)
-	//	}
-	//}
 }
 
 func handleError(context string, err error) {

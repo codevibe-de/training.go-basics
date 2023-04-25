@@ -20,13 +20,16 @@ Ein Worker muss also:
 
 Für beide Tätigkeiten gibt es jeweils einen Input (zu tun) und Output (erledigt) Channel. 
 
+Ein Worker arbeitet so lange wie die Input-Kanäle offen sind.
+
 ## Supervisor
 
 Eine "Supervisor" Goroutine bearbeitet Pizza Bestellungen, indem sie
 
-* sich bestellte Pizzen merkt
+* sich bestellte und noch nicht-ausgelieferte Pizzen merkt
 * die Zutaten für eine bestellte Pizza zur Bearbeitung an die Arbeiter übergibt
 * über fertig bearbeitete Zutaten informiert wird
-* Pizzen mit fertigen Zutaten zum Backen übergibt 
+* Pizzen mit fertigen Zutaten zum Backen übergibt
+* fertig gebackene Pizzen an den Kunden weitergibt
 
-Der Supervisor arbeitet mindestens so lange bis `pizzaOrderCh` geschlossen wurde
+Der Supervisor arbeitet mindestens so lange bis alle Pizzen ausgeliefert wurden.
