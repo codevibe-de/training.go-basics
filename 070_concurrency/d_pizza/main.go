@@ -107,7 +107,7 @@ func main() {
 
 	// launch workers
 	log.Println("Pizzeria starting up!")
-	pizzaOrderCh, pizzaDeliverCh := startPizzeria(&oven, 5)
+	pizzaOrderCh, pizzaDeliverCh := startPizzeria(&oven, 3)
 
 	// bake them
 	// ps of course we could use a for loop here if we had more pizzas
