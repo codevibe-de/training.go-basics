@@ -28,14 +28,17 @@ Wir backen Pizzen!
 
 Schauen Sie sich den Source-Code in `070_concurrency/d_pizza/main.go` an. Dort werden Pizzen und ihre Zutaten 
 definiert. Es gibt auch einen Ofen. Sowohl die Zutaten als auch der Ofen müssen präpariert werden, dies benötigt 
-jeweils Zeit.
+jeweils Zeit. Das Backen der Pizzen ebenfalls.
 
 Ein rein sequentieller Ablauf ist vorgegeben.
 
 Aber in Ihrer Pizzeria haben wir drei tüchtige Helfer, nicht nur einen.
 
 Reduzieren Sie die Gesamtzeit so weit wie möglich, indem sie mit insgesamt 3 laufenden Prozessen arbeiten. Die 
-bestehenden Datentypen können erweitert werden, falls Sie noch Methoden oder Interfaces einbauen wollen. 
+bestehenden Datentypen können erweitert werden, falls Sie noch Methoden oder Interfaces einbauen wollen.
+
+ACHTUNG, diese Übung ist wesentlich komplizierter als anfangs gedacht. Im `solution` Branch finden Sie eine mögliche
+Lösung sowie eine Markdown-Datei mit Konzeptideen.
 
 ## e) Entweder Oder
 
