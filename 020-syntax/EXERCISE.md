@@ -1,8 +1,8 @@
 # Übungen
 
-## a) Variablen & Konstanten
+**Für jeden Übungsteil steht ein entsprechendes Verzeichnis zum Erstellen der Lösung zur Verfügung.**
 
-Sie können für diese Übungen die Datei `020-syntax/a_variables-and-constants/main.go` nutzen.
+## a) Variablen & Konstanten
 
 ### Variablen
 
@@ -14,19 +14,16 @@ Welche Zuweisungen von einer zu anderen gehen, welche nicht?
 
 Deklarieren Sie nicht-gruppierte und gruppierte Konstanten.
 
-Was passiert, wenn diese gemischt in einem Ausdruck genutzt werden?
-
+Experimenten Sie mit untypisierten Konstanten (z.B. `const x = 1`) und welchen typisierten Variablen diese zugewiesen werden kann.
 ### Iota
 
-Schreiben Sie eine Gruppe an Konstanten, welche die Werte `KB`, `MB` und `GB` deklariert.
+Schreiben Sie eine Gruppe an Konstanten, welche die Werte `KB`, `MB` und `GB` mit der jeweiligen Anzahl an repräsentierten Bytes deklariert.
 
 Nutzen Sie hierfür `iota` zur automatischen Berechnung.
 
 Tipp: mit `1 << 10` shiften Sie eine bestehende Zahl um 10 bits nach vorne
 
 ## b) Pointers
-
-Nutzen Sie die Datei `020-syntax/b_pointers/main.go`.
 
 ### miniSort
 
