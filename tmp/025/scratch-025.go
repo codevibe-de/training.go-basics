@@ -75,6 +75,7 @@ func main() {
 	//doSomeReading(&cr)
 	//fmt.Println(cr.BytesRead)
 	formatParseDemo()
+	typeAssert()
 }
 
 type Formatter interface {
@@ -116,4 +117,12 @@ type LoggingParser struct {
 func (lp LoggingParser) parse(s string) int {
 	fmt.Printf("About to parse: %q\n", s)
 	return lp.Parser.parse(s)
+}
+
+func typeAssert() {
+	var n interface{} = int32(123)
+	i, ok := n.(int32)
+	if ok {
+		fmt.Println("Variable `n` is actually of type `int32` with value", i)
+	}
 }

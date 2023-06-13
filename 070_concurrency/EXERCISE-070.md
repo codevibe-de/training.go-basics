@@ -22,6 +22,16 @@ Wie wissen wir, wann jede Goroutine bereit ist? Mögliche Optionen, von einfach 
 In jedem Fall schreiben wir dann in den Startsignal-Channel Werte, um jede Goroutine nahezu gleichzeitig
 loslaufen zu lassen.
 
+## c) Entweder Oder
+
+Starten Sie eine Goroutine, die alle 800 ms einen `int` Wert in einen Kanal schreibt.
+
+Starten Sie eine andere Goroutine, die alle 1100 ms einen `string` in einen anderen Kanal schreibt.
+
+In der `main()` Methode nutzen Sie ein `select`, um entweder auf die eine oder auf die andere Nachricht zu reagieren.
+
+Ihre Anwendung wird endlos laufen, Sie können diese u.a. mit CTRL+C abbrechen.
+
 ## d) Pizza
 
 Wir backen Pizzen!
@@ -40,9 +50,6 @@ bestehenden Datentypen können erweitert werden, falls Sie noch Methoden oder In
 ACHTUNG, diese Übung ist wesentlich komplizierter als anfangs gedacht. Im `solution` Branch finden Sie eine mögliche
 Lösung sowie eine Markdown-Datei mit Konzeptideen.
 
-## e) Entweder Oder
-
-Starten Sie eine Goroutine, die alle 800 ms einen `int` Wert in einen Kanal schreibt.
 
 Starten Sie eine andere Goroutine, die alle 1100 ms einen `string` in einen anderen Kanal schreibt.
 
