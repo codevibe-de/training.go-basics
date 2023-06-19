@@ -18,7 +18,8 @@ Das benötigte UUID Modul deklarieren Sie in dieser Datei und führen dann `go g
 Und/oder Sie führen `go get <module-path>` (mit oder ohne Version) aus, um das Modul importieren zu lassen. 
 Was verändert sich in der `go.mod` Datei?
 
-Schauen Sie nun nach einem älteren Release des Moduls und nutzen dieses.
+Schauen Sie nun nach einem älteren Release des Moduls und nutzen dieses. Lassen Sie sich mögliche Upgrades
+mit `go list -m -u all` anzeigen. Anschließend können Sie das Upgrade mit `go get -u` durchführen. 
 
 Schlußendlich können Sie natürlich das Package "uuid" in der `main.go` Datei importieren und nutzen (z.B. 
 mittels `fmt.Println(uuid.New())`

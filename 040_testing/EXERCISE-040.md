@@ -3,7 +3,7 @@
 Tipp: Man kann Tests auf der Kommandozeile mit `go test` ausführen. Natürlich auch in der IDE - VSC hat
 hierfür eine eigene Ansicht (Reagenzglas).
 
-## Fibonacci
+## a) Fibonacci
 
 Schauen Sie sich die Fibonacci Implementierung in der Datei `fib.go` an.
 
@@ -11,7 +11,7 @@ Dort ist einiges nicht richtig.
 
 Nutzen Sie die vorhandenen Tests, um die Implementierung zu fixen.
 
-## Stack
+## b) Stack
 
 Schreiben Sie Tests für Ihre Stack-Methoden, d.h. für die objektorientierte Variante.
 

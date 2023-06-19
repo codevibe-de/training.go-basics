@@ -14,10 +14,13 @@ Welche Zuweisungen von einer zu anderen gehen, welche nicht?
 
 Deklarieren Sie nicht-gruppierte und gruppierte Konstanten.
 
-Experimenten Sie mit untypisierten Konstanten (z.B. `const x = 1`) und welchen typisierten Variablen diese zugewiesen werden kann.
+Experimenten Sie mit untypisierten Konstanten (z.B. `const x = 1`) und welchen typisierten Variablen diese zugewiesen
+werden kann.
+
 ### Iota
 
-Schreiben Sie eine Gruppe an Konstanten, welche die Werte `KB`, `MB` und `GB` mit der jeweiligen Anzahl an repräsentierten Bytes deklariert.
+Schreiben Sie eine Gruppe an Konstanten, welche die Werte `KB`, `MB` und `GB` mit der jeweiligen Anzahl an
+repräsentierten Bytes deklariert.
 
 Nutzen Sie hierfür `iota` zur automatischen Berechnung.
 

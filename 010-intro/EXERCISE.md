@@ -1,6 +1,6 @@
 # Übungen
 
-## Hello World
+## a) Hello World
 
 Ergänzen Sie in dem Verzeichnis "a_helloworld" die Datei `main.go`, sodass bei dessen Ausführung ein
 typisches "Hello, World!" auf der Kommandozeile ausgegeben wird.
@@ -10,7 +10,7 @@ Starten Sie Ihr Programm:
 - auf der Kommandozeile mit `go run main.go`
 - und bauen Sie es in ein Binary mittels `go build` - und führen Sie dieses aus
 
-## Formatieren
+## b) Formatieren
 
 Deklarieren Sie in Ihrem Code eine Variable mittels `var n int = 42`.
 
