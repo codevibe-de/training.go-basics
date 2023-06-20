@@ -10,7 +10,7 @@ func main() {
 }
 
 func doubleInts(ints ...*int) {
-	for i := range ints {
-		*ints[i] = *ints[i] * 2
+	for _, v := range ints {
+		*v *= 2 // oder: *v = *v * 2
 	}
 }
