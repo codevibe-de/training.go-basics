@@ -24,7 +24,7 @@ repräsentierten Bytes deklariert.
 
 Nutzen Sie hierfür `iota` zur automatischen Berechnung.
 
-Tipp: mit `1 << 10` shiften Sie eine bestehende Zahl um 10 bits nach vorne
+Tipp: es gibt einen Bit-Shift Operator
 
 ## b) Pointers
 
@@ -54,19 +54,21 @@ Deklarieren Sie ein Array von Zahlen, z.B. `int` oder `float32`.
 Schreiben Sie eine Funktion, welche das Array als Parameter annimmt und
 die Summe aller Zahlen zurückgibt.
 
+Wenn Sie ein `float32` Array nehmen, dann könnten Sie z.B. 10-mal die 0.1 addieren lassen. Was kommt da raus?
+
 ## f) If Abfragen
 
 Schreiben Sie eine Funktion, welche für das Array von Zahlen (siehe oben)
-nun sowohl den kleinsten wie auch den größten Wert zurückgibt.
+nun sowohl den kleinsten als auch den größten Wert zurückgibt.
 
 ## g) Switch
 
 Wir wollen wissen, ob heute Wochenende ist (okay, recht unwahrscheinlich während des Trainings).
 
 Dazu bitte im StdLib Package "time" (https://pkg.go.dev/time) die Funktion `Now()` und `Weekday()` anschauen. Ebenso
-gibt es dort Konstanten für die einzelnen Wochentage.
+gibt es dort Konstanten für die einzelnen Wochentage (welchen Typ haben diese?).
 
-Schreiben Sie eine switch Anweisung, die für den heutigen Tag ausgibt, ob es Wochenende ist oder nicht.
+Schreiben Sie eine `switch` Anweisung, die für den heutigen Tag ausgibt, ob es gerade Wochenende ist oder nicht.
 
 ## h) Strings und Runes
 
@@ -81,11 +83,13 @@ Hilfreich sind die StdLib Packages "strings" und "unicode".
 
 ### kebap-case / snake-case
 
-Ergänzend können Sie eine Transformation in Kebap Case vornehmen: "heute-lerne-ich-go"
+Ergänzend können Sie eine Transformation in Kebab-Case vornehmen: "heute-lerne-ich-go"
 
 ## i) Structs
 
-Sie möchten folgendes JSON mit Structs verarbeiten:
+Als Entwickler sind Sie mit einer JSON Schnittstelle konfrontiert, die etwas unschöne Attributnamen verwendet.
+
+Mit Go möchten Sie nun (mittels eines Structs) das folgende JSON erzeugen:
 
 ````json
 {
@@ -107,10 +111,13 @@ Exportieren Sie den Struct in JSON mit `json.Marshal(p1)` -- aber Achtung, es gi
 
 ## j) Variadische Funktionen
 
-Schreiben Sie eine Funktion, die alle übergebenen `int` Werte verdoppelt. Es soll kein Array übergeben werden,
-sondern einzelne Werte!
+Schreiben Sie eine Funktion, die alle übergebenen `int` Werte verdoppelt, sodass sich diese Werte in
+der **aufrufenden** Funktion auch verändern. Anders gesagt: Jeder einzelne übergebene Wert soll am Ort 
+seiner Deklaration verdoppelt worden sein.
 
-Welche Signatur muss diese Funktion haben?
+Es soll kein Array übergeben werden, sondern einzelne Werte! Ebenso darf kein Wert zurückgegeben werden.
+
+Welche Signatur (d.h. Parameterdeklarationen) muss diese Funktion haben?
 
 ## l) First Class Citizen Functions
 
