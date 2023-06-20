@@ -52,9 +52,6 @@ func indexBooksByIsbn(books []book) map[string]book {
 func groupBooksByAuthor(books []book) map[string][]book {
 	res := make(map[string][]book)
 	for _, v := range books {
-		if res[v.author] == nil {
-			res[v.author] = make([]book, 0, 5)
-		}
 		res[v.author] = append(res[v.author], v)
 	}
 	return res
@@ -63,9 +60,6 @@ func groupBooksByAuthor(books []book) map[string][]book {
 func groupBooksByPublisher(books []book) map[string][]book {
 	res := make(map[string][]book)
 	for _, v := range books {
-		if res[v.publisher] == nil {
-			res[v.publisher] = make([]book, 0, 5)
-		}
 		res[v.publisher] = append(res[v.publisher], v)
 	}
 	return res
@@ -97,9 +91,6 @@ func groupBooksUsingKeyExtractor(books []book, keyExtractor keyExtractorFunc) ma
 	res := make(map[string][]book)
 	for _, b := range books {
 		key := keyExtractor(b)
-		if res[key] == nil {
-			res[key] = make([]book, 0, 5)
-		}
 		res[key] = append(res[key], b)
 	}
 	return res
