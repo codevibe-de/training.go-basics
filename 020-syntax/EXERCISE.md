@@ -154,7 +154,9 @@ Angenommen es gibt ein Struct mit den Attributen
 * author (string)
 * publisher (string)
 
-Schreiben Sie Funktionen, welche die Bücher in einer Map gruppiert (je Key mehrere Bücher):
+Schreiben Sie eine Funktion, welche die Bücher je ISBN indiziert (je Key ein Buch).
+
+Schreiben Sie dann zwei Funktionen, welche die Bücher in einer Map gruppiert (je Key mehrere Bücher):
 
 * nach Autor (`groupBooksByAuthor()`)
 * nach Verlag (`groupBooksByPublisher()`)
