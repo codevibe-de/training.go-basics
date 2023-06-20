@@ -19,20 +19,29 @@ func main() {
 	}
 	fmt.Println(books)
 
-	var booksByIsbn map[string]book = groupBooksByIsbn(books[:])
+	// index by
+	var booksByIsbn map[string]book = indexBooksByIsbn(books[:])
+	fmt.Println("Books indexed by ISBN:")
 	fmt.Println(booksByIsbn)
 
+	// group by
 	var booksByAuthor map[string][]book = groupBooksByAuthor(books[:])
+	fmt.Println("Books grouped by author:")
 	fmt.Println(booksByAuthor)
+	var booksByPublisher map[string][]book = groupBooksByPublisher(books[:])
+	fmt.Println("Books grouped by publisher:")
+	fmt.Println(booksByPublisher)
 
 	// bonus exercise calls from here on:
+	fmt.Println("Books grouped by author key-extractor:")
 	booksByAuthor = groupBooksUsingKeyExtractor(books[:], createKeyExtractor(KEY_AUTHOR))
 	fmt.Println(booksByAuthor)
-	booksByPublisher := groupBooksUsingKeyExtractor(books[:], createKeyExtractor(KEY_PUBLISHER))
+	fmt.Println("Books grouped by publisher key-extractor:")
+	booksByPublisher = groupBooksUsingKeyExtractor(books[:], createKeyExtractor(KEY_PUBLISHER))
 	fmt.Println(booksByPublisher)
 }
 
-func groupBooksByIsbn(books []book) map[string]book {
+func indexBooksByIsbn(books []book) map[string]book {
 	res := make(map[string]book)
 	for _, v := range books {
 		res[v.isbn] = v
@@ -47,6 +56,17 @@ func groupBooksByAuthor(books []book) map[string][]book {
 			res[v.author] = make([]book, 0, 5)
 		}
 		res[v.author] = append(res[v.author], v)
+	}
+	return res
+}
+
+func groupBooksByPublisher(books []book) map[string][]book {
+	res := make(map[string][]book)
+	for _, v := range books {
+		if res[v.publisher] == nil {
+			res[v.publisher] = make([]book, 0, 5)
+		}
+		res[v.publisher] = append(res[v.publisher], v)
 	}
 	return res
 }
