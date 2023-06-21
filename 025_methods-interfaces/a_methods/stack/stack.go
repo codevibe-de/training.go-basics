@@ -32,3 +32,7 @@ func (s *Stack) Peek() (string, bool) {
 		return s.items[l-1], true
 	}
 }
+
+func (s *Stack) Len() int {
+	return len(s.items)
+}
