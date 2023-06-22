@@ -1,27 +1,28 @@
 # Übungen zum Thema "Module und Pakete"
 
 Tipps:
+
 * `go get` ohne Argumente bereinigt und aktualisiert die deklarierten Abhängigkeiten
 * `go get <module-path>` fügt das Modul der `go.mod` hinzu und lädt es herunter
 
 ## a) Modul nutzen
 
-Entwickeln Sie eine kleine Go-Anwendung, welche das Modul https://github.com/google/uuid nutzt. 
+Entwickeln Sie eine kleine Go-Anwendung, welche das Modul https://github.com/google/uuid nutzt.
 
-Nutzen Sie dafür das vorhandene Verzeichnis `051_module-exrc`.
+Hierfür müssen Sie irgendwo einen neuen Ordner anlegen.
 
 Ihre Anwendung benötigt eine `go.mod` Datei, welche Sie mittels `go mod init` dort erzeugen lassen. Da wir eine lokale
 Anwendung entwickeln, ist der Pfad nicht von Bedeutung.
 
 Das benötigte UUID Modul deklarieren Sie in dieser Datei und führen dann `go get` aus.
 
-Und/oder Sie führen `go get <module-path>` (mit oder ohne Version) aus, um das Modul importieren zu lassen. 
+Und/oder Sie führen `go get <module-path>` (mit oder ohne Version) aus, um das Modul importieren zu lassen.
 Was verändert sich in der `go.mod` Datei?
 
 Schauen Sie nun nach einem älteren Release des Moduls und nutzen dieses. Lassen Sie sich mögliche Upgrades
-mit `go list -m -u all` anzeigen. Anschließend können Sie das Upgrade mit `go get -u` durchführen. 
+mit `go list -m -u all` anzeigen. Anschließend können Sie das Upgrade mit `go get -u` durchführen.
 
-Schlußendlich können Sie natürlich das Package "uuid" in der `main.go` Datei importieren und nutzen (z.B. 
+Schlußendlich können Sie natürlich das Package "uuid" in der `main.go` Datei importieren und nutzen (z.B.
 mittels `fmt.Println(uuid.New())`
 
 ## b) Eigenes Modul erstellen
@@ -43,7 +44,8 @@ verwenden.
 
 ## d) Experimentelles Package nutzen
 
-Schauen Sie sich den Code in `main.go` an -- sowie das experimentelle Package https://pkg.go.dev/golang.org/x/exp/slices.
+Schauen Sie sich den Code in `022_modules-packages/main.go` an -- sowie das experimentelle
+Modul "pkg.go.dev/golang.org/x/exp" mit dem Package "slices": https://pkg.go.dev/golang.org/x/exp
 
 Dort gibt es eine Funktion zum Vergleichen zweier Slices.
 

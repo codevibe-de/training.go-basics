@@ -6,16 +6,16 @@ import (
 	"os"
 )
 
-var globalInt int
+var age int
 
 func main() {
-	var showUsage *bool = flag.Bool("usage", false, "Prints this usage message")
-	var monsterName *string = flag.String("name", "", "Specifies the name of the monster")
-	flag.IntVar(&globalInt, "age", 0, "Specifies the age of the monster in years")
+	var showUsage *bool = flag.Bool("usage", false, "Show this usage message")
+	var name *string = flag.String("name", "", "Your name")
+	flag.IntVar(&age, "age", 0, "Your age")
 	flag.Parse()
-	if *showUsage || len(flag.Args()) == 0 {
+	if *showUsage || len(os.Args) <= 1 {
 		flag.Usage()
 		os.Exit(0)
 	}
-	fmt.Println(*monsterName)
+	fmt.Println(*name, age)
 }

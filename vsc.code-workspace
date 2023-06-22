@@ -9,8 +9,8 @@
 			"path": "020-syntax"
 		},
 		{
-			"name": "025_methods-interfaces",
-			"path": "025_methods-interfaces"
+			"name": "042_methods-interfaces",
+			"path": "042_methods-interfaces"
 		},
 		{
 			"name": "030_error",
@@ -21,8 +21,8 @@
 			"path": "040_testing"
 		},
 		{
-			"name": "050_modules-packages",
-			"path": "050_modules-packages"
+			"name": "022_modules-packages",
+			"path": "022_modules-packages"
 		},
 		{
 			"name": "051_module-exrc",

@@ -3,6 +3,7 @@ package main
 import (
 	"bufio"
 	"fmt"
+	"io/fs"
 	"os"
 	"path/filepath"
 )
@@ -28,4 +29,27 @@ func main() {
 			n++
 		}
 	}
+}
+
+func reduced() {
+	filename := os.Args[1]
+	outputDir, exists := os.LookupEnv("TEMP")
+
+	os.Mkdir(outputDir, fs.ModeDir)
+
+	var (
+		dirs []os.DirEntry
+		err  error
+	)
+	dirs, err = os.ReadDir("/var/tmp")
+
+	var file *os.File
+	file, err = os.Open(filename)
+
+	var bytes []byte
+	bytes, err = os.ReadFile(filename)
+
+	os.Exit(0)
+
+	fmt.Println(exists, dirs, err, file, bytes) // use vars
 }

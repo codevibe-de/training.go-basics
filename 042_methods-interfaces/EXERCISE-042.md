@@ -16,12 +16,15 @@ Fügen Sie dort die in `main.go` vordefinierten Bücher ein und fragen diese dan
 
 ### Stack (Bonusaufgabe)
 
-Refaktorieren Sie Ihre `Stack` Implementierung aus dem Abschnitt "020/Slices" in eine objektorientierte Variante.
+Kopieren Sie Ihre Stack-Implementierung aus dem Verzeichnis `020-syntax/o_slices` hierher in eine Datei
+`042_methods-interfaces/stack/stack.go`. 
 
-Machen Sie die Implementierung in einer Datei `stack\stack.go` (d.h. in Unterverzeichnis) mit Package "stack".
+Ändern Sie den Package-Namen auf "stack".
 
-Dies erfordert allerdings auch, dass Sie den Struct-Bezeichner und alle Methodennamen mit einem **Großbuchstaben**
-beginnen lassen, damit diese Deklarationen exportiert werden.
+Refaktorieren Sie dann den Code in eine objektorientierte Variante.
+
+Die Ablage in einem neuen Package erfordert, dass Sie den Struct-Bezeichner und alle Methodennamen mit einem *
+*Großbuchstaben** beginnen lassen, damit die Deklarationen exportiert werden.
 
 Achtung, es gibt keinen Konstruktor in Go. Falls Sie einen benötigen, so muss eine `NewStack()` Funktion
 herhalten.

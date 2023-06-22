@@ -50,20 +50,20 @@ func createError() {
 }
 
 type RequestError struct {
+	error
 	StatusCode int
-	Err        error
 }
 
 func (r *RequestError) Error() string {
-	return fmt.Sprintf("status %d: err %v", r.StatusCode, r.Err)
+	return fmt.Sprintf("status %d: err %v", r.StatusCode, r.error)
 }
 
 func customError() {
-	var err error = &RequestError{503, errors.New("Unavailable")}
+	var err error = &RequestError{errors.New("unavailable"), 503}
 	fmt.Println(err)
 
-	reqError, ok := err.(*RequestError)
+	reqErr, ok := err.(*RequestError)
 	if ok {
-		fmt.Printf("Got request-error with status %d\n", reqError.StatusCode)
+		fmt.Printf("request-error, status %d\n", reqErr.StatusCode)
 	}
 }
