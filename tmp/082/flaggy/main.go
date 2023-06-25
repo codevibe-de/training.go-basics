@@ -1,11 +1,8 @@
 package main
 
 import (
-	"crypto/md5"
 	"fmt"
 	"github.com/integrii/flaggy"
-	"github.com/tauinger-de/training.go-basics.lib/compare"
-	"golang.org/x/exp/slices"
 )
 
 func main() {
@@ -18,9 +15,4 @@ func main() {
 	flaggy.Parse()
 
 	fmt.Println(inputArg)
-
-	fmt.Println(compare.EqualInt(1, 2))
-
-	md5.New()
-	slices.Compare(nil, nil)
 }
