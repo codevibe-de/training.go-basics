@@ -21,9 +21,12 @@ func bookshelfDemo() {
 		{"193-753", "T. Müller", "Wort und Bild Verlag"},
 	}
 
-	shelf := NewBookshelf()
+	shelf := newBookshelf()
 	for _, b := range books {
-		shelf.add(b)
+		err := shelf.add(b)
+		if err != nil {
+			panic(err)
+		}
 	}
 
 	fmt.Println("Get one book:")
@@ -44,7 +47,7 @@ type bookshelf struct {
 	booksByIsbn map[string]book
 }
 
-func NewBookshelf() bookshelf {
+func newBookshelf() bookshelf {
 	bs := bookshelf{}
 	bs.init()
 	return bs
@@ -53,7 +56,7 @@ func NewBookshelf() bookshelf {
 func (bs *bookshelf) add(b book) error {
 	_, exists := bs.booksByIsbn[b.isbn]
 	if exists {
-		return fmt.Errorf("This bookshelf contains already a book with ISBN `%s`", b.isbn)
+		return fmt.Errorf("bookshelf already contains a book with ISBN `%s`", b.isbn)
 	} else {
 		bs.booksByIsbn[b.isbn] = b
 		return nil
@@ -74,9 +77,7 @@ func (bs *bookshelf) all() []book {
 }
 
 func (bs *bookshelf) init() {
-	if bs.booksByIsbn == nil {
-		bs.booksByIsbn = make(map[string]book)
-	}
+	bs.booksByIsbn = make(map[string]book)
 }
 
 // ----------------- stack -------------------
