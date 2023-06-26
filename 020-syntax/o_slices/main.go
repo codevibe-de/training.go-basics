@@ -1,10 +1,17 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 type stack []string
 
 func main() {
+	demoStack1()
+	//stack2.Demo()
+}
+
+func demoStack1() {
 	fmt.Println("Slices:")
 
 	myStack := make(stack, 0)

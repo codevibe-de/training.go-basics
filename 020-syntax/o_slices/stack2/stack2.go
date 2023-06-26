@@ -1,33 +1,33 @@
-package main
+package stack2
 
 import "fmt"
 
-type stack []string
+type Stack []string
 
-func main() {
+func Demo() {
 	fmt.Println("Slices:")
 
-	myStack := make(stack, 0)
+	myStack := make(Stack, 0)
 	fmt.Println(myStack)
 
-	push(&myStack, "first")
+	Push(&myStack, "first")
 	fmt.Println(myStack)
 
-	push(&myStack, "second")
-	item := pop(&myStack)
+	Push(&myStack, "second")
+	item := Pop(&myStack)
 	fmt.Printf("popped: '%s'\n", item)
 	fmt.Println(myStack)
 
-	push(&myStack, "third")
+	Push(&myStack, "third")
 	fmt.Println(myStack)
-	fmt.Println("peeked:", peek(&myStack))
+	fmt.Println("peeked:", Peek(&myStack))
 }
 
-func push(st *stack, item string) {
+func Push(st *Stack, item string) {
 	*st = append(*st, item)
 }
 
-func pop(st *stack) string {
+func Pop(st *Stack) string {
 	l := len(*st)
 	if l == 0 {
 		return ""
@@ -38,6 +38,6 @@ func pop(st *stack) string {
 	}
 }
 
-func peek(st *stack) string {
+func Peek(st *Stack) string {
 	return (*st)[len(*st)-1]
 }
