@@ -2,25 +2,14 @@ package main
 
 import (
 	"fmt"
-	"local/025_methods-interfaces/a_methods/stack"
+	"local/042_methods-interfaces/a_methods/stack"
 )
 
 func main() {
-	fmt.Println("----------------- STACK ----------------------------")
-	stackDemo()
 	fmt.Println("----------------- BOOKSHELF ------------------------")
 	bookshelfDemo()
-}
-
-func stackDemo() {
-	s := stack.NewStack()
-	s.Push("first")
-	s.Push("second")
-	fmt.Println(s.Peek()) // "second"
-	s.Push("third")
-	fmt.Println(s.Pop())  // "third"
-	fmt.Println(s.Pop())  // "second"
-	fmt.Println(s.Peek()) // "first"
+	fmt.Println("----------------- STACK ----------------------------")
+	stackDemo()
 }
 
 func bookshelfDemo() {
@@ -32,7 +21,7 @@ func bookshelfDemo() {
 		{"193-753", "T. Müller", "Wort und Bild Verlag"},
 	}
 
-	shelf := bookshelf{}
+	shelf := NewBookshelf()
 	for _, b := range books {
 		shelf.add(b)
 	}
@@ -55,8 +44,13 @@ type bookshelf struct {
 	booksByIsbn map[string]book
 }
 
-func (bs *bookshelf) add(b book) error {
+func NewBookshelf() bookshelf {
+	bs := bookshelf{}
 	bs.init()
+	return bs
+}
+
+func (bs *bookshelf) add(b book) error {
 	_, exists := bs.booksByIsbn[b.isbn]
 	if exists {
 		return fmt.Errorf("This bookshelf contains already a book with ISBN `%s`", b.isbn)
@@ -67,12 +61,10 @@ func (bs *bookshelf) add(b book) error {
 }
 
 func (bs *bookshelf) forIsbn(isbn string) book {
-	bs.init()
 	return bs.booksByIsbn[isbn]
 }
 
 func (bs *bookshelf) all() []book {
-	bs.init()
 	booksSlice := make([]book, 0, len(bs.booksByIsbn))
 	for _, b := range bs.booksByIsbn {
 		booksSlice = append(booksSlice, b)
@@ -84,4 +76,17 @@ func (bs *bookshelf) init() {
 	if bs.booksByIsbn == nil {
 		bs.booksByIsbn = make(map[string]book)
 	}
+}
+
+// ----------------- stack -------------------
+
+func stackDemo() {
+	s := stack.NewStack()
+	s.Push("first")
+	s.Push("second")
+	fmt.Println(s.Peek()) // "second"
+	s.Push("third")
+	fmt.Println(s.Pop())  // "third"
+	fmt.Println(s.Pop())  // "second"
+	fmt.Println(s.Peek()) // "first"
 }
