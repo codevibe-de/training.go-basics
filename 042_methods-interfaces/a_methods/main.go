@@ -60,8 +60,9 @@ func (bs *bookshelf) add(b book) error {
 	}
 }
 
-func (bs *bookshelf) forIsbn(isbn string) book {
-	return bs.booksByIsbn[isbn]
+func (bs *bookshelf) forIsbn(isbn string) (book, bool) {
+	book, exists := bs.booksByIsbn[isbn]
+	return book, exists
 }
 
 func (bs *bookshelf) all() []book {
