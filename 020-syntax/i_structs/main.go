@@ -27,4 +27,7 @@ func main() {
 	}
 	bytes, _ := json.Marshal(p1)
 	fmt.Println(string(bytes))
+
+	bytes, _ = json.MarshalIndent(p1, "", "  ")
+	fmt.Println(string(bytes))
 }
