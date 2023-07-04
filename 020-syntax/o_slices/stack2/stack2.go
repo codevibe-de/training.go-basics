@@ -14,7 +14,7 @@ func Demo() {
 	fmt.Println(myStack)
 
 	Push(&myStack, "second")
-	item := Pop(&myStack)
+	item, _ := Pop(&myStack)
 	fmt.Printf("popped: '%s'\n", item)
 	fmt.Println(myStack)
 
@@ -27,14 +27,14 @@ func Push(st *Stack, item string) {
 	*st = append(*st, item)
 }
 
-func Pop(st *Stack) string {
+func Pop(st *Stack) (string, bool) {
 	l := len(*st)
 	if l == 0 {
-		return ""
+		return "", false
 	} else {
 		popped := (*st)[l-1]
 		*st = (*st)[:l-1]
-		return popped
+		return popped, true
 	}
 }
 
