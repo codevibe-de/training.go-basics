@@ -2,6 +2,10 @@ package main
 
 import "fmt"
 
+func main() {
+	sliceLenAndCap()
+}
+
 func sliceDemo() {
 	intSlice := []int{1, 2, 3}
 	fmt.Println(intSlice)
@@ -13,6 +17,7 @@ func sliceLenAndCap() {
 	intSlice := []int{1, 2, 3}
 	intSlice = append(intSlice, 4)
 	fmt.Printf("length: %d, capacity: %d", len(intSlice), cap(intSlice))
+	// length: 4, capacity: 6
 }
 
 func slicing() {
