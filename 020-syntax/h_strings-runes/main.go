@@ -9,8 +9,8 @@ import (
 func main() {
 	fmt.Println("Strings and Runes:")
 
-	s := "HeuTe lerne ich Go"
-	words := strings.Split(strings.ToLower(s), " ")
+	s := "HeuTe lerne ich \t\t\t Go"
+	words := strings.Fields(strings.ToLower(s))
 	for i, w := range words {
 		runes := []rune(w)
 		runes[0] = unicode.ToUpper(runes[0])
@@ -19,7 +19,7 @@ func main() {
 	camelCase := strings.Join(words, "")
 	fmt.Println(camelCase)
 
-	words = strings.Split(strings.ToLower(s), " ")
+	words = strings.Fields(strings.ToLower(s))
 	kebabCase := strings.Join(words, "-")
 	fmt.Println(kebabCase)
 }
