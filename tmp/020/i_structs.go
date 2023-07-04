@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"reflect"
 	"time"
 )
 
@@ -50,5 +51,22 @@ func taggedStruct() {
 		level           string `json:"lvl" xml:"the-level"`
 		message         string `json:"msg"`
 		ignoreThisField int    `json:"-"`
+	}
+}
+
+func printTags() {
+	type User struct {
+		username string `json:"user-name"`
+		roles    []string
+		disabled bool
+	}
+	u := User{username: "john.doe", disabled: true}
+
+	fmt.Println("Fields of struct:")
+	t := reflect.TypeOf(u)
+	for n := 0; n < t.NumField(); n++ {
+		structField := t.Field(n)
+		fmt.Printf("#%d %s\n", n, structField.Name)
+		fmt.Printf("   value of `json` tag: %s\n", structField.Tag.Get("json"))
 	}
 }
