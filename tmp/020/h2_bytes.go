@@ -2,11 +2,6 @@ package main
 
 import "fmt"
 
-func main() {
-	strBytes()
-	strSlice()
-}
-
 func strBytes() {
 	s := "Ȫ"
 	fmt.Println(len(s))
@@ -28,10 +23,3 @@ func strBytes() {
 // 0 200
 // 1 170
 // Ȫ
-
-func strSlice() {
-	var s = "Hello"
-	fmt.Println(s[3:])
-}
-
-// lo

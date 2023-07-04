@@ -13,11 +13,13 @@ func simpleChannel() {
 
 func bufferedChannel() {
 	ch := make(chan int, 100)
+	fmt.Printf("Channel contains %d of max %d items\n", len(ch), cap(ch))
 	// we can write into channel although there
 	// is no consuming goroutine
 	ch <- 1
 	ch <- 2
 	ch <- 3
+	fmt.Printf("Channel contains %d of max %d items\n", len(ch), cap(ch))
 }
 
 func closeChannel() {
@@ -51,17 +53,5 @@ func readUntilClosedRanged(ch chan int) {
 }
 
 func main() {
-	ch := make(chan int)
-	go readUntilClosedRanged(ch)
-	ch <- 1
-	ch <- 2
-	close(ch)
-	time.Sleep(time.Second)
-}
-
-func sayHello(ch chan string) {
-	for {
-		name := <-ch
-		fmt.Printf("Hello %s\n", name)
-	}
+	bufferedChannel()
 }

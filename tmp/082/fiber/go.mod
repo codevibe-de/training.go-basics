@@ -1,4 +1,4 @@
-module local/tmp/057_extlibs/fiber
+module local/tmp82/fiber
 
 go 1.19
 

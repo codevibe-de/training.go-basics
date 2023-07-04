@@ -13,9 +13,9 @@ Nutzen Sie die vorhandenen Tests, um die Implementierung zu fixen.
 
 ## b) Stack
 
-Schreiben Sie Tests für Ihre Stack-Methoden, d.h. für die objektorientierte Variante.
+Schreiben Sie Tests für Ihre Stack Implementierung.
 
-In den Tests sollen alle Methoden geprüft werden, d.h. `Push()`, `Pop()` und `Peek()`.
+In den Tests sollten alle Features geprüft werden, d.h. `Push()`, `Pop()` und `Peek()`.
 
 Hierfür können Sie folgende Testarten nutzen/kombinieren:
 

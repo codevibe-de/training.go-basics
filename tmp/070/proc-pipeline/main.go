@@ -7,14 +7,15 @@ import (
 
 func main() {
 	doneCh := make(chan struct{})
-	result := collector(
-		mapper(
-			filter(gen(doneCh), func(n int) bool { return n%2 == 0 }),
-		),
-	)
+
+	genOutCh := generator(doneCh)
+	filterOutCh := filter(genOutCh, func(n int) bool { return n%2 == 0 })
+	mapOutCh := mapper(filterOutCh)
+	result := collector(mapOutCh)
+
 	time.Sleep(time.Second)
 	doneCh <- struct{}{}
-	fmt.Println(*result)
+	fmt.Println(result)
 }
 
 func gen(done chan struct{}) chan int {
@@ -65,7 +66,7 @@ func mapper(inCh chan int) chan int {
 	return outCh
 }
 
-func collector(inCh chan int) *[]int {
+func collector(inCh chan int) []int {
 	res := make([]int, 0, 10)
 	go func() {
 		fmt.Println("Collector stage starting")
@@ -74,5 +75,5 @@ func collector(inCh chan int) *[]int {
 		}
 		fmt.Println("Collector stage stopping")
 	}()
-	return &res
+	return res
 }

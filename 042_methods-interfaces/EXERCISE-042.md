@@ -33,6 +33,8 @@ herhalten.
 
 ### Formatter & Parser
 
+*Diese Übung bitte mit reinem "Interface implementieren" lösen - nicht mit Embedding.*
+
 Erstellen Sie ein Interface `Formatter`, welches ein `int` in einen `string` formatieren kann.
 
 Erstellen Sie außerdem ein Interface `Parser`, welches einen `string` in ein `int` parsen kann.
@@ -45,6 +47,8 @@ Erstellen Sie die folgenden Structs, welche durch ihre vorhandenen Methoden dies
 Entkommentieren Sie die `check()` Methode und rufen Sie diese mit Ihren Structs auf.
 
 ### LoggingParser
+
+*In dieser Übung bitte mit Embedding arbeiten.*
 
 Erstellen Sie ein struct `LoggingParser`, welches mittels Embedding wie ein `Parser` auftreten kann.
 
