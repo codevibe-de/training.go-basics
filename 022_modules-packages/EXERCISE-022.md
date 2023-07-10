@@ -11,8 +11,8 @@ Entwickeln Sie eine kleine Go-Anwendung, welche das Modul https://github.com/goo
 
 Hierfür müssen Sie irgendwo einen neuen Ordner anlegen.
 
-Ihre Anwendung benötigt eine `go.mod` Datei, welche Sie mittels `go mod init` dort erzeugen lassen. Da wir eine lokale
-Anwendung entwickeln, ist der Pfad nicht von Bedeutung.
+Ihre Anwendung benötigt eine `go.mod` Datei, welche Sie mittels `go mod init <module-path>` dort erzeugen lassen. Da wir
+eine lokale Anwendung entwickeln, ist der Pfad nicht von Bedeutung.
 
 Das benötigte UUID Modul deklarieren Sie in dieser Datei und führen dann `go get` aus.
 
