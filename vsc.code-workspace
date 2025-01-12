@@ -9,8 +9,8 @@
 			"path": "020-syntax"
 		},
 		{
-			"name": "042_methods-interfaces",
-			"path": "042_methods-interfaces"
+			"name": "022_modules-packages",
+			"path": "022_modules-packages"
 		},
 		{
 			"name": "030_error",
@@ -21,12 +21,8 @@
 			"path": "040_testing"
 		},
 		{
-			"name": "022_modules-packages",
-			"path": "022_modules-packages"
-		},
-		{
-			"name": "051_module-exrc",
-			"path": "051_module-exrc"
+			"name": "042_methods-interfaces",
+			"path": "042_methods-interfaces"
 		},
 		{
 			"name": "070_concurrency",
