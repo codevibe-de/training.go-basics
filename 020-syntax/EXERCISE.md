@@ -28,8 +28,6 @@ Tipp: es gibt einen Bit-Shift Operator
 
 ## b) Pointers
 
-### miniSort
-
 Verändern Sie die Funktion `miniSort` und deren Aufruf derart, dass die gewünschte Ausgabe
 erfolgt.
 
