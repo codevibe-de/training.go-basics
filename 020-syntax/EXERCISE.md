@@ -72,14 +72,13 @@ Schreiben Sie eine `switch` Anweisung, die für den heutigen Tag ausgibt, ob es 
 
 ### CamelCase
 
-Für einen beliebigen String wie z.B. "Heute lerne ich Go" soll die Camel-Case-Variante in der Form "HeuteLerneIchGo"
-berechnet werden.
+Ein beliebiger String wie z.B. "Heute lerne ich Go" soll in die Camel-Case Namenskonvention (in der Form "HeuteLerneIchGo") überführt werden.
 
 Schreiben Sie die dafür notwendige Funktion.
 
 Hilfreich sind die StdLib Packages "strings" und "unicode".
 
-### kebap-case / snake-case
+### kebab-case
 
 Ergänzend können Sie eine Transformation in Kebab-Case vornehmen: "heute-lerne-ich-go"
 
