@@ -11,5 +11,6 @@ func returningMultipleValues(name string) (int, error) {
 
 func namedReturn(a, b, c, d int) (min, max int) {
 	min, max = a, b
-	return min, max
+	return
+	// oder: return min, max
 }
