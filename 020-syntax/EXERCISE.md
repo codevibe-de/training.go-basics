@@ -130,8 +130,9 @@ Implementieren Sie diese Funktion in mehreren Varianten:
 * Subtraktion
 * Multiplikation
 
-Rufen Sie nun ihre Funktion (auch gerne verschachtelt) auf und lassen
-das Ergebnis ausgeben.
+Rufen Sie nun Ihre Funktionen auf und lassen
+das Ergebnis ausgeben. Sie können diese auch gerne verschachtelt aufrufen, um den Output des einen Aufrufs
+gleich als Argument in den nächsten Aufruf zu übergeben.
 
 ## o) Slices
 
