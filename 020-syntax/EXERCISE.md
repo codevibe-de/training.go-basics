@@ -28,8 +28,6 @@ Tipp: es gibt einen Bit-Shift Operator
 
 ## b) Pointers
 
-### miniSort
-
 Verändern Sie die Funktion `miniSort` und deren Aufruf derart, dass die gewünschte Ausgabe
 erfolgt.
 
@@ -74,14 +72,13 @@ Schreiben Sie eine `switch` Anweisung, die für den heutigen Tag ausgibt, ob es 
 
 ### CamelCase
 
-Für einen beliebigen String wie z.B. "Heute lerne ich Go" soll die Camel-Case-Variante in der Form "HeuteLerneIchGo"
-berechnet werden.
+Ein beliebiger String wie z.B. "Heute lerne ich Go" soll in die Camel-Case Namenskonvention (in der Form "HeuteLerneIchGo") überführt werden.
 
 Schreiben Sie die dafür notwendige Funktion.
 
 Hilfreich sind die StdLib Packages "strings" und "unicode".
 
-### kebap-case / snake-case
+### kebab-case
 
 Ergänzend können Sie eine Transformation in Kebab-Case vornehmen: "heute-lerne-ich-go"
 
@@ -133,8 +130,9 @@ Implementieren Sie diese Funktion in mehreren Varianten:
 * Subtraktion
 * Multiplikation
 
-Rufen Sie nun ihre Funktion (auch gerne verschachtelt) auf und lassen
-das Ergebnis ausgeben.
+Rufen Sie nun Ihre Funktionen auf und lassen
+das Ergebnis ausgeben. Sie können diese auch gerne verschachtelt aufrufen, um den Output des einen Aufrufs
+gleich als Argument in den nächsten Aufruf zu übergeben.
 
 ## o) Slices
 

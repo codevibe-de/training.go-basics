@@ -17,7 +17,7 @@ Fügen Sie dort die in `main.go` vordefinierten Bücher ein und fragen diese dan
 ### Stack (Bonusaufgabe)
 
 Kopieren Sie Ihre Stack-Implementierung aus dem Verzeichnis `020-syntax/o_slices` hierher in eine Datei
-`042_methods-interfaces/stack/stack.go`. 
+`042_methods-interfaces/stack/stack.go`.
 
 Ändern Sie den Package-Namen auf "stack".
 
@@ -50,7 +50,8 @@ Entkommentieren Sie die `check()` Methode und rufen Sie diese mit Ihren Structs 
 
 *In dieser Übung bitte mit Embedding arbeiten.*
 
-Erstellen Sie ein struct `LoggingParser`, welches mittels Embedding wie ein `Parser` auftreten kann.
+Erstellen Sie ein struct `LoggingParser`, welches mittels Embedding wie ein `Parser` (aus der vorherigen Übung)
+auftreten kann.
 
 Dieser `LoggingParser` soll jeden zu parsenden String ausgeben.
 

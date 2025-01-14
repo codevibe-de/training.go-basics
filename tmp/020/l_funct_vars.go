@@ -13,9 +13,11 @@ func funcVars() {
 	fmt.Println(isEmpty(""), isEmpty("abc"))
 }
 
+// Output: true false
+
 type filterFunc func(string) bool
 
-func closure() {
+func main() {
 	atLeastThree := createFilterFunc(3)
 	fmt.Println(atLeastThree("ab"), atLeastThree("abc"))
 }

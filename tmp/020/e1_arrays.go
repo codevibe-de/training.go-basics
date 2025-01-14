@@ -17,5 +17,9 @@ func arrayDemo() {
 	fmt.Println(arr)
 
 	strArr := [3]string{"Hey you", "Out there in the cold"}
-	fmt.Printf("%q (%T)\n", strArr, strArr)
+	fmt.Printf("%q\n", strArr)
+}
+
+func main() {
+	arrayDemo()
 }

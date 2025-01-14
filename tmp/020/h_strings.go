@@ -2,6 +2,11 @@ package main
 
 import "fmt"
 
+func strSlice() {
+	var s = "Hello"
+	fmt.Println(s[3:])
+}
+
 func stringRange() {
 	s := "números"
 	fmt.Println("idx | unicode | char")

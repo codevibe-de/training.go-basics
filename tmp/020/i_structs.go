@@ -6,12 +6,17 @@ import (
 	"time"
 )
 
+func main() {
+	anonStruct()
+}
+
 func structs() {
 	type address struct {
 		zipCode int
 		city    string
 		country string
 	}
+
 	berlinCentral := address{zipCode: 10557, city: "Berlin"}
 	fmt.Println(berlinCentral)
 
@@ -45,6 +50,8 @@ func anonStruct() {
 	}
 	fmt.Println(logData)
 }
+
+// {INFO The application is starting up 1736705499232}
 
 func taggedStruct() {
 	type logData struct {

@@ -16,7 +16,10 @@ Deklarieren Sie in Ihrem Code eine Variable mittels `var n int = 42`.
 
 Lassen Sie sich diese Variable mittels `fmt.Printf()` auf unterschiedliche Weise ausgeben:
 * einfach als Zahl
-* mit "0" Padding vorne, sodass immer vier Ziffern ausgegeben werden
+* mit "0" Padding vorne, sodass immer vier Ziffern ausgegeben werden ("0042")
 * als binary Zahl
 * als hexadezimale Zahl
 * als den Typ der Variable
+
+Links:
+- https://pkg.go.dev/fmt
