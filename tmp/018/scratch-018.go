@@ -8,7 +8,6 @@ import (
 func main() {
 	simpleErrors()
 	createError()
-	customError()
 
 	//file, err := os.Open("*crazy*filename*")
 	//if err != nil {
@@ -47,23 +46,4 @@ func createError() {
 	fmt.Println(errors.Is(fluxError, errOutOfFuel))
 	fmt.Println(errors.Is(fluxError, errNoPilot))
 	fmt.Println(errors.Is(fluxError, errDisconnectedWire))
-}
-
-type RequestError struct {
-	error
-	StatusCode int
-}
-
-func (r *RequestError) Error() string {
-	return fmt.Sprintf("status %d: err %v", r.StatusCode, r.error)
-}
-
-func customError() {
-	var err error = &RequestError{errors.New("unavailable"), 503}
-	fmt.Println(err)
-
-	reqErr, ok := err.(*RequestError)
-	if ok {
-		fmt.Printf("request-error, status %d\n", reqErr.StatusCode)
-	}
 }
