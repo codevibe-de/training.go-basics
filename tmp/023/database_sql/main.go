@@ -8,7 +8,9 @@ import (
 )
 
 func main() {
-	db, err := sql.Open("pgx", "postgres://postgres:Test1234@localhost:5432?sslmode=disable")
+	db, err := sql.Open(
+		"pgx",
+		"postgres://postgres:Test1234@localhost:5432?sslmode=disable")
 	if err != nil {
 		panic(err)
 	}

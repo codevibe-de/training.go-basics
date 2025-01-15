@@ -9,7 +9,7 @@ import (
 var age int
 
 func main() {
-	var showUsage *bool = flag.Bool("usage", false, "Show this usage message")
+	var showUsage *bool = flag.Bool("usage", false, "usage message")
 	var name *string = flag.String("name", "", "Your name")
 	flag.IntVar(&age, "age", 0, "Your age")
 	flag.Parse()

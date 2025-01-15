@@ -9,8 +9,8 @@ type Stringer interface {
 	String() string
 }
 
-func foo2(str Stringer) {
-	fmt.Println(str.String())
+func foo(s Stringer) {
+	fmt.Println(s.String())
 }
 
 type SomeThing struct{}
@@ -43,6 +43,8 @@ func embedded() {
 	}
 	fmt.Println(cntr.b == cntr.Base.b)
 }
+
+// true
 
 type ReadWriter interface {
 	io.Reader
