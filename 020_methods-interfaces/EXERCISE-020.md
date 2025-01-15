@@ -49,6 +49,8 @@ Structs auf.
 
 *In dieser Übung bitte mit Embeddings arbeiten.*
 
+Diese Übung sollten Sie ebenfalls im Verzeichnis `020_methods-interfaces/c_interfaces` umsetzen.
+
 Erstellen Sie ein struct `LoggingParser`, welches mittels Embedding wie ein `Parser` (aus der vorherigen Übung)
 auftreten kann.
 
