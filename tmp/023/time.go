@@ -14,10 +14,7 @@ func main() {
 	fmt.Printf("%02d.%02d.%04d\n", now.Day(), now.Month(), now.Year())
 	fmt.Println(now.Format("02.01.2006"))
 
-	tz, err := time.LoadLocation("Australia/Sydney")
-	if err != nil {
-		panic(err)
-	}
+	tz, _ := time.LoadLocation("Australia/Sydney")
 	sydneyTime := now.In(tz)
 	fmt.Println(sydneyTime)
 

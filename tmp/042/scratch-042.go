@@ -9,8 +9,8 @@ type Stringer interface {
 	String() string
 }
 
-func foo2(str Stringer) {
-	fmt.Println(str.String())
+func foo(s Stringer) {
+	fmt.Println(s.String())
 }
 
 type SomeThing struct{}
@@ -26,23 +26,29 @@ var y interface{} = true
 var z = struct{}{}
 var xx any = x
 
-type Base struct {
-	b int
+type AbstractEntity struct {
+	id int
 }
 
-type Container struct {
-	Base
+func (b AbstractEntity) GetId() int {
+	return b.id
+}
+
+type Product struct {
+	AbstractEntity
 	c string
 }
 
 func embedded() {
-	cntr := Container{
-		Base: Base{
-			b: 1,
+	product := Product{
+		AbstractEntity: AbstractEntity{
+			id: 1,
 		},
 	}
-	fmt.Println(cntr.b == cntr.Base.b)
+	product.GetId()
 }
+
+// true
 
 type ReadWriter interface {
 	io.Reader
@@ -52,30 +58,6 @@ type ReadWriter interface {
 type ReadWriteCloser interface {
 	io.ReadCloser
 	io.WriteCloser
-}
-
-type CountingReader struct {
-	io.Reader
-	BytesRead uint64
-}
-
-func (cr *CountingReader) Read(p []byte) (int, error) {
-	n, err := cr.Reader.Read(p)
-	cr.BytesRead += uint64(n)
-	return n, err
-}
-
-func doSomeReading(r io.Reader) {
-	bytes := make([]byte, 10)
-	r.Read(bytes)
-}
-
-func main() {
-	//cr := CountingReader{strings.NewReader("abc"), 0}
-	//doSomeReading(&cr)
-	//fmt.Println(cr.BytesRead)
-	formatParseDemo()
-	typeAssert()
 }
 
 type Formatter interface {
