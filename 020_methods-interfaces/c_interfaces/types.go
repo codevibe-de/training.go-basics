@@ -18,7 +18,7 @@ type BinaryFormatter struct {
 }
 
 func (bf BinaryFormatter) format(n int) string {
-	return fmt.Sprintf("%b", n)
+	return fmt.Sprintf("%b", n) // or strconv.FormatInt()
 }
 
 type BinaryParser struct {
@@ -26,7 +26,7 @@ type BinaryParser struct {
 
 func (bs BinaryParser) parse(s string) int {
 	var result = 0
-	_, _ = fmt.Sscanf(s, "%b", &result)
+	_, _ = fmt.Sscanf(s, "%b", &result) // or strconv.ParseInt()
 	return result
 }
 

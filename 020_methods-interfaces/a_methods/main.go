@@ -54,7 +54,7 @@ func newBookshelf() bookshelf {
 }
 
 func (bs *bookshelf) add(b book) error {
-	_, exists := bs.booksByIsbn[b.isbn]
+	_, exists := bs.forIsbn(b.isbn)
 	if exists {
 		return fmt.Errorf("bookshelf already contains a book with ISBN `%s`", b.isbn)
 	} else {
