@@ -1,3 +1,3 @@
-module local/030_errors
+module local/018_errors
 
 go 1.19
